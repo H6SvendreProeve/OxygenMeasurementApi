@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "tluYGrZJAFaAw8XJDPoNzLZIobOFEEqvH01BZQJaozwv5or4Oto4r29b19T7FXCFo8lc2uiul7E+DKLu0qggRw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi\\OxygenMeasurementApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.13\\microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
