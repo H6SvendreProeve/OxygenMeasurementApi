@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using OxygenMeasurementApi.Api.Dtos.OxygenMeasurementDtos;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
@@ -9,12 +10,14 @@ namespace OxygenMeasurementApi.Controllers;
 public class OxygenController : ControllerBase
 {
     private IOxygenMeasurementService OxygenMeasurementService { get; }
-    private readonly ILogger<OxygenController> logger;
+    private ILogger<OxygenController> Logger { get; }
+    private IHubContext<OxygenMeasurementHub> OxygenHub { get; }
 
-    public OxygenController(ILogger<OxygenController> logger, IOxygenMeasurementService oxygenMeasurementService)
+    public OxygenController(ILogger<OxygenController> logger, IOxygenMeasurementService oxygenMeasurementService,IHubContext<OxygenMeasurementHub> oxygenHub )
     {
-        this.logger = logger;
+        Logger = logger;
         OxygenMeasurementService = oxygenMeasurementService;
+        OxygenHub = oxygenHub;
     }
 
     [HttpPost("CreateOxygenMeasurement")]
@@ -26,8 +29,10 @@ public class OxygenController : ControllerBase
         {
             return BadRequest("something went wrong when creating measurement");
         }
+        
+        await OxygenHub.Clients.All.SendAsync("ReceiveOxygenMeasurement", createOxygenMeasurement);
 
-        return Ok();
+        return Created("result", created);
     }
 
     [HttpGet("GetAllOxygenMeasurements")]

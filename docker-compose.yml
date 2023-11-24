@@ -1,0 +1,43 @@
+﻿version: '3.8'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  
+  oxygenMeasurement_db:
+    image: postgres:latest
+    container_name: oxygenMeasurement_db_container
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=OxygenMeasurementDb
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - oxygenMeasurement_data:/var/lib/postgresql/data
+    networks:
+      - dev
+
+  oxygenmeasurement:
+    image: docker.io/library/oxygenmeasurementapi
+    depends_on:
+      - "oxygenMeasurement_db"
+    container_name: "oxygenmeasurementapi_container"
+    ports:
+      - "8088:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: [ "dockerize", "-wait", "tcp://oxygenMeasurement_db:5432", "-timeout", "60s", "dotnet", "OxygenMeasurementApi.dll" ]
+    environment:
+      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=postgres;Server=oxygenMeasurement_db;port=5432;Database=OxygenMeasurementDb; IntegratedSecurity=true;Pooling=true;
+      - ASPNETCORE_URLS=HTTP://+:80
+    networks:
+      - dev
+
+
+volumes:
+  oxygenMeasurement_data: {}

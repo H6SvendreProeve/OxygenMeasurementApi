@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
 namespace OxygenMeasurementApi.Entities;
 
 public class OxygenMeasurement

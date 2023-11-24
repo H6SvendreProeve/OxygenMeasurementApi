@@ -41,3 +41,13 @@ C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasur
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\obj\Debug\net7.0\OxygenMeasurementApi.pdb
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\obj\Debug\net7.0\OxygenMeasurementApi.genruntimeconfig.cache
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\obj\Debug\net7.0\ref\OxygenMeasurementApi.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

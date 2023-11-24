@@ -8,19 +8,19 @@ namespace OxygenMeasurementApi.Services.OxygenMeasurementService;
 
 public class OxygenMeasurementService : IOxygenMeasurementService
 {
-
     private OxygenDbContext OxygenDbContext { get; }
-    
+
     public OxygenMeasurementService(OxygenDbContext oxygenDbContext)
     {
         OxygenDbContext = oxygenDbContext;
     }
-    
+
     public async Task<bool> CreateOxygenMeasurement(CreateOxygenMeasurement createOxygenMeasurement)
-    { 
-        await OxygenDbContext.OxygenMeasurements.AddAsync(createOxygenMeasurement.OxygenMeasurementAsEntity());
+    {
+        var oxygenMeasurement = createOxygenMeasurement.OxygenMeasurementAsEntity();
+        await OxygenDbContext.OxygenMeasurements.AddAsync(oxygenMeasurement);
         await OxygenDbContext.SaveChangesAsync();
-        return true;
+        return oxygenMeasurement.Id > 1;
     }
 
     public async Task<List<OxygenMeasurement>> GetAllOxygenMeasurements()
@@ -30,14 +30,15 @@ public class OxygenMeasurementService : IOxygenMeasurementService
 
     public async Task<List<OxygenMeasurement>> GetSpecificAmountOfOxygenMeasurements(int amount)
     {
-        var measurements = await OxygenDbContext.OxygenMeasurements.ToListAsync();
+        var dbMeasurements = await OxygenDbContext.OxygenMeasurements.ToListAsync();
 
-        if (!measurements.Any())
-        {
-            return new List<OxygenMeasurement>();
-        }
-        return (List<OxygenMeasurement>)(from measurement in measurements
-            orderby measurement.MeasurementTime descending
-            select measurement).Take(amount);
+        return (from measurement in dbMeasurements
+            orderby measurement.Id descending
+            select measurement).Take(amount).ToList();
+    }
+
+    public async Task<OxygenMeasurement?> GetOxygenMeasurementById(int id)
+    {
+        return await OxygenDbContext.OxygenMeasurements.FindAsync(id);
     }
 }

@@ -2,6 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxygenMeasurementApi", "OxygenMeasurementApi\OxygenMeasurementApi.csproj", "{DB2A12F6-8AC3-423F-8862-A463BE8A9FEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxygenMeasurementApi.Tests", "OxygenMeasurementApi.Tests\OxygenMeasurementApi.Tests.csproj", "{94F5F29C-B601-4F79-89D6-40D89EDFB951}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8410EFC0-29DC-46E3-BFA0-69F11F1649D1}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +19,9 @@ Global
 		{DB2A12F6-8AC3-423F-8862-A463BE8A9FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB2A12F6-8AC3-423F-8862-A463BE8A9FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB2A12F6-8AC3-423F-8862-A463BE8A9FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F5F29C-B601-4F79-89D6-40D89EDFB951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F5F29C-B601-4F79-89D6-40D89EDFB951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F5F29C-B601-4F79-89D6-40D89EDFB951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F5F29C-B601-4F79-89D6-40D89EDFB951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
