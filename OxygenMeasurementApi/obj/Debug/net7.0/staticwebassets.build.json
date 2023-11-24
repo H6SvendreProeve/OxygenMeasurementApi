@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "leL6tBEWnPYmshik254z8rFQQn4HrPqUqBzAl8RQaCk=",
+  "Source": "OxygenMeasurementApi",
+  "BasePath": "_content/OxygenMeasurementApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
