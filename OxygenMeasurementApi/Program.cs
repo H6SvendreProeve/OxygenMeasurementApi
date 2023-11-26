@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OxygenMeasurementApi;
 using OxygenMeasurementApi.Data;
+using OxygenMeasurementApi.Data.Context;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 });*/
 
 builder.Services.AddScoped<IOxygenMeasurementService, OxygenMeasurementService>();
-
+builder.Services.AddScoped<IOxygenDbContext, OxygenDbContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -61,3 +62,5 @@ app.MapControllers();
 app.MapHub<OxygenMeasurementHub>("oxygenMeasurementHub");
 
 app.Run();
+
+public partial class Program {}

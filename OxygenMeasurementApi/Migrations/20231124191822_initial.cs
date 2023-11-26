@@ -9,7 +9,11 @@ namespace OxygenMeasurementApi.Migrations
     /// <inheritdoc />
     public partial class initial : Migration
     {
-        /// <inheritdoc />
+        /// <inheritdoc /> N 
+                          
+                              
+                          
+
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(

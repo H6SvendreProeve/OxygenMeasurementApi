@@ -1,5 +1,5 @@
-using OxygenMeasurementApi.Api.Dtos.OxygenMeasurementDtos;
-using OxygenMeasurementApi.Entities;
+using OxygenMeasurementApi.Data.Entities;
+using OxygenMeasurementApi.OxygenMeasurements.Create;
 
 namespace OxygenMeasurementApi.Services.OxygenMeasurementService;
 

@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=aa74fa20_002D9333_002D46e0_002Da62d_002D881cc7f2d6c0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Create_shouldAdd_New_OxygenMeasurement" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::94F5F29C-B601-4F79-89D6-40D89EDFB951::net7.0::OxygenMeasurementApi.Tests.OxygenMeasurementServiceTests.Create_shouldAdd_New_OxygenMeasurement&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::94F5F29C-B601-4F79-89D6-40D89EDFB951::net7.0::OxygenMeasurementApi.Tests.OxygenMeasurementServiceTests.Create_shouldAdd_New_OxygenMeasurementToDatabase&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::94F5F29C-B601-4F79-89D6-40D89EDFB951::net7.0::OxygenMeasurementApi.Tests.IntegrationTests.OxygenMeasurementControllerTests.Create_new_OxygenMeasurement_shouldReturn_statusCode_200&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

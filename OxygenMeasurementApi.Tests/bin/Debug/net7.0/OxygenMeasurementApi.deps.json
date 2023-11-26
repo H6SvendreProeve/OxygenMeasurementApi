@@ -9,7 +9,8 @@
       "OxygenMeasurementApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "7.0.13",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.14",
+          "Microsoft.AspNetCore.SignalR.Client": "7.0.14",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -25,6 +26,42 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Connections.Abstractions/7.0.14": {
+        "dependencies": {
+          "Microsoft.Extensions.Features": "7.0.14",
+          "System.IO.Pipelines": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Connections.Client/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Connections.Common": "7.0.14",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Microsoft.Extensions.Options": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Http.Connections.Client.dll": {
+            "assemblyVersion": "7.0.14.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Connections.Common/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "7.0.14"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Http.Connections.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.13": {
         "dependencies": {
           "Microsoft.OpenApi": "1.4.3"
@@ -36,59 +73,109 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.14": {
+      "Microsoft.AspNetCore.SignalR.Client/7.0.14": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.14",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.14",
+          "Microsoft.AspNetCore.Http.Connections.Client": "7.0.14",
+          "Microsoft.AspNetCore.SignalR.Client.Core": "7.0.14"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.SignalR.Client.dll": {
+            "assemblyVersion": "7.0.14.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Client.Core/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "7.0.14",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "7.0.14",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "System.Threading.Channels": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.SignalR.Client.Core.dll": {
+            "assemblyVersion": "7.0.14.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Common/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "7.0.14",
+          "Microsoft.Extensions.Options": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.SignalR.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Protocols.Json/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "7.0.14"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/7.0.11": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.11",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "7.0.14.0",
-            "fileVersion": "7.0.1423.52313"
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.1123.40906"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.14": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "7.0.14.0",
-            "fileVersion": "7.0.1423.52313"
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.1123.40906"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.14": {},
-      "Microsoft.EntityFrameworkCore.Design/7.0.14": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {},
+      "Microsoft.EntityFrameworkCore.Design/7.0.11": {
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.14",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.11",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "7.0.14.0",
-            "fileVersion": "7.0.1423.52313"
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.1123.40906"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.14",
+          "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "7.0.14.0",
-            "fileVersion": "7.0.1423.52313"
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.1123.40906"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.14": {
+      "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.14"
+          "Microsoft.EntityFrameworkCore.Design": "7.0.11"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -101,8 +188,8 @@
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Options": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Microsoft.Extensions.Options": "7.0.1",
           "Microsoft.Extensions.Primitives": "7.0.0"
         }
       },
@@ -129,19 +216,40 @@
           }
         }
       },
+      "Microsoft.Extensions.Features/7.0.14": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Features.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Options": "7.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Microsoft.Extensions.Options": "7.0.1"
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {},
-      "Microsoft.Extensions.Options/7.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.723.27404"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/7.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Primitives": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.323.6910"
+          }
         }
       },
       "Microsoft.Extensions.Primitives/7.0.0": {},
@@ -166,7 +274,7 @@
       },
       "Npgsql/7.0.6": {
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
         },
         "runtime": {
           "lib/net7.0/Npgsql.dll": {
@@ -177,9 +285,9 @@
       },
       "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.11": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.14",
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.14",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.14",
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.11",
           "Npgsql": "7.0.6"
         },
         "runtime": {
@@ -235,12 +343,14 @@
           }
         }
       },
+      "System.IO.Pipelines/7.0.0": {},
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.0": {
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
         }
-      }
+      },
+      "System.Threading.Channels/7.0.0": {}
     }
   },
   "libraries": {
@@ -256,6 +366,27 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Connections.Abstractions/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bWr25f/6Yb63JfJY7R3cR/FBTlz/kiWeKJ1xpkBO1yUDO/HWtoftikieXt4cW9aC55sf/AlodC4okr39t6PWIg==",
+      "path": "microsoft.aspnetcore.connections.abstractions/7.0.14",
+      "hashPath": "microsoft.aspnetcore.connections.abstractions.7.0.14.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Connections.Client/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eIbCTyAArT/pJUbtBwrzSGCk6lUbCaNk35JIK2T1silTaXYiu/tEKezaTNFGRF12tsswONi9WE1BcpY0OIdVTQ==",
+      "path": "microsoft.aspnetcore.http.connections.client/7.0.14",
+      "hashPath": "microsoft.aspnetcore.http.connections.client.7.0.14.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Connections.Common/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/bZkfe2cK91GKZ7CYBMRXlaj2Z33+OJ72ZxVM5L6qtWoWAWHwfz62vahv3eGNxw6NsS6f2BBfNeNYGN6Ncd0oA==",
+      "path": "microsoft.aspnetcore.http.connections.common/7.0.14",
+      "hashPath": "microsoft.aspnetcore.http.connections.common.7.0.14.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.OpenApi/7.0.13": {
       "type": "package",
       "serviceable": true,
@@ -263,47 +394,75 @@
       "path": "microsoft.aspnetcore.openapi/7.0.13",
       "hashPath": "microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/7.0.14": {
+    "Microsoft.AspNetCore.SignalR.Client/7.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0KYkAemPygW6yzifciFlmMzkO4sI4Dw69xLgwg3ui5rXJS5XvzuAWVvfdrKJciqeCbCnVS/ZbOWpcwWgqce5bQ==",
-      "path": "microsoft.entityframeworkcore/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.7.0.14.nupkg.sha512"
+      "sha512": "sha512-2eOL4EoSM9SLkWShOQF+8K9B7ScQtCfSygYWYWOIDEgXc9TbxIbNqENHQgyPkIR4d6ln+IXkDPJHEUD6y/3hGQ==",
+      "path": "microsoft.aspnetcore.signalr.client/7.0.14",
+      "hashPath": "microsoft.aspnetcore.signalr.client.7.0.14.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.14": {
+    "Microsoft.AspNetCore.SignalR.Client.Core/7.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aEcXDSYpDdD5wdIRKTqcS44f3W4capqQ1BWVRPJgacATfHkO62RX9Nnh0hUFg+rei9OLuJp0Y4zsy1fNeOXv5g==",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512"
+      "sha512": "sha512-GLmtjbbcj9tlSR8hGtMp/nD1DV7NyexSTzv+Aon+IUCLjXYUb49DP7dm3EAu4wTEML8yNQ9Z8UD0ZpUMD1StYA==",
+      "path": "microsoft.aspnetcore.signalr.client.core/7.0.14",
+      "hashPath": "microsoft.aspnetcore.signalr.client.core.7.0.14.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.14": {
+    "Microsoft.AspNetCore.SignalR.Common/7.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-esI4RF6mix4DDFBhWB9k1vJxAL8GouSf5ZV8oFJoVsIQ9d2J3MPgC1VL2qM9Vw5cH7Vg7TzRyKNpCRXFVkWs9w==",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512"
+      "sha512": "sha512-xrhQu8v/Hvv97s63h1yO1ODIH5bfY3PtuGx8Hy4x8OlE7KqTObbsaDPMFuMJ69sXIXsibENDkAm/9orcDuKlHA==",
+      "path": "microsoft.aspnetcore.signalr.common/7.0.14",
+      "hashPath": "microsoft.aspnetcore.signalr.common.7.0.14.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.14": {
+    "Microsoft.AspNetCore.SignalR.Protocols.Json/7.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XpJgGQH4en21omeHncOobpGwB03oB6OIArl1a7AmhltUSdEqfhJ1aEqAQXkRdrFu2O8JaHQl10QCt4tHRok5Mw==",
-      "path": "microsoft.entityframeworkcore.design/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.design.7.0.14.nupkg.sha512"
+      "sha512": "sha512-KsJMbeuoFCczV/R2JF7dcUnopt6hDRckcNzwKNRRy7vsj42EybnSMGt5wWb6rfqfeXDsCec0HIw9O2HijUN4GQ==",
+      "path": "microsoft.aspnetcore.signalr.protocols.json/7.0.14",
+      "hashPath": "microsoft.aspnetcore.signalr.protocols.json.7.0.14.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
+    "Microsoft.EntityFrameworkCore/7.0.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MrVBnWOFYwfLMGQfrcIuqEM9Xvokv1vJeYxqNH3K3xOtAdHwHQTrKnpDP97tU+LBlvcnyXAtAtryYcpLXWtRNA==",
-      "path": "microsoft.entityframeworkcore.relational/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.relational.7.0.14.nupkg.sha512"
+      "sha512": "sha512-r7YGITjQ7v1hYtUXIavjSx+T1itKVPUFAIBN7HaKNjbR8x+gep8w9H3NEchglJOh1woZR4b2MhbSo2YFRZwZDg==",
+      "path": "microsoft.entityframeworkcore/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.7.0.11.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.14": {
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RjGysXi4k0yM7b2Znyasdhqu5FxOeuyZzo9g2w/ZhP87VsgFeoiykDPs69qIGTjjLbW0N5+srrl439ZQnMlHXw==",
-      "path": "microsoft.entityframeworkcore.tools/7.0.14",
-      "hashPath": "microsoft.entityframeworkcore.tools.7.0.14.nupkg.sha512"
+      "sha512": "sha512-IoOnhycZ0/VtLowf0HgB0cujxwksokzkS3/5108AHOcbntHUTqwxtCjG4E4FCly/45G+mxb+4PxBdFZhA49lwQ==",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qexum5safSSfijx6P1QSq5bVJPPTM/uf7lQmpL/shkiozEC/0FzqNaVUfFpbNN8zsO1jMFYbeDMF4cxJMlTT9w==",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Design/7.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DaykA+XkNNiznnJq8HWVl4jpBycL9/W8NkonoBz7eIrxfU9Q4zH4iPztlvOkJugYCNPS29frPnju3RY72FoPNQ==",
+      "path": "microsoft.entityframeworkcore.design/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yHEEyah1XARStV1SJOsdKj8ieoMCZ0MkNuQaLfWONMWmbqwuDohfGQZk/FuzdT4aO/lJrUYiXbBSFv0ACzphEw==",
+      "path": "microsoft.entityframeworkcore.relational/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dhNLVQsMi6E4XEkVNmxbaNkLd06Q0ipwgiBz9k9rSjzaNJQVUA+/N6lsKRWXjFjTPgsaVpos+KN5Iimy6TQ2Yg==",
+      "path": "microsoft.entityframeworkcore.tools/7.0.11",
+      "hashPath": "microsoft.entityframeworkcore.tools.7.0.11.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
@@ -354,6 +513,13 @@
       "path": "microsoft.extensions.dependencymodel/7.0.0",
       "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Features/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9sFoJZ/mISqZ0FS6oiMvypvsOoxaYoYrFrWnCjQYDR8bK42itJuNd8ul9syEs+0p/k5NkXk4fcIDKEkaXKhfgA==",
+      "path": "microsoft.extensions.features/7.0.14",
+      "hashPath": "microsoft.extensions.features.7.0.14.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -361,19 +527,19 @@
       "path": "microsoft.extensions.logging/7.0.0",
       "hashPath": "microsoft.extensions.logging.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
+    "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
-      "path": "microsoft.extensions.logging.abstractions/7.0.0",
-      "hashPath": "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512"
+      "sha512": "sha512-pkeBFx0vqMW/A3aUVHh7MPu3WkBhaVlezhSZeb1c9XD0vUReYH1TLFSy5MxJgZfmz5LZzYoErMorlYZiwpOoNA==",
+      "path": "microsoft.extensions.logging.abstractions/7.0.1",
+      "hashPath": "microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.Options/7.0.0": {
+    "Microsoft.Extensions.Options/7.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lP1yBnTTU42cKpMozuafbvNtQ7QcBjr/CcK3bYOGEMH55Fjt+iecXjT6chR7vbgCMqy3PG3aNQSZgo/EuY/9qQ==",
-      "path": "microsoft.extensions.options/7.0.0",
-      "hashPath": "microsoft.extensions.options.7.0.0.nupkg.sha512"
+      "sha512": "sha512-pZRDYdN1FpepOIfHU62QoBQ6zdAoTvnjxFfqAzEd9Jhb2dfhA5i6jeTdgGgcgTWFRC7oT0+3XrbQu4LjvgX1Nw==",
+      "path": "microsoft.extensions.options/7.0.1",
+      "hashPath": "microsoft.extensions.options.7.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/7.0.0": {
       "type": "package",
@@ -445,6 +611,13 @@
       "path": "system.codedom/4.4.0",
       "hashPath": "system.codedom.4.4.0.nupkg.sha512"
     },
+    "System.IO.Pipelines/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
+      "path": "system.io.pipelines/7.0.0",
+      "hashPath": "system.io.pipelines.7.0.0.nupkg.sha512"
+    },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -458,6 +631,13 @@
       "sha512": "sha512-DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
       "path": "system.text.json/7.0.0",
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
+    },
+    "System.Threading.Channels/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
+      "path": "system.threading.channels/7.0.0",
+      "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
     }
   }
 }

@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using OxygenMeasurementApi.Api.Dtos.OxygenMeasurementDtos;
-using OxygenMeasurementApi.Data;
+using OxygenMeasurementApi.Data.Context;
+using OxygenMeasurementApi.Data.Entities;
 using OxygenMeasurementApi.Data.Extensions;
-using OxygenMeasurementApi.Entities;
+using OxygenMeasurementApi.OxygenMeasurements.Create;
 
 namespace OxygenMeasurementApi.Services.OxygenMeasurementService;
 
 public class OxygenMeasurementService : IOxygenMeasurementService
 {
-    private OxygenDbContext OxygenDbContext { get; }
+    private IOxygenDbContext OxygenDbContext { get; }
 
-    public OxygenMeasurementService(OxygenDbContext oxygenDbContext)
+    public OxygenMeasurementService(IOxygenDbContext oxygenDbContext)
     {
         OxygenDbContext = oxygenDbContext;
     }
@@ -20,7 +20,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
         var oxygenMeasurement = createOxygenMeasurement.OxygenMeasurementAsEntity();
         await OxygenDbContext.OxygenMeasurements.AddAsync(oxygenMeasurement);
         await OxygenDbContext.SaveChangesAsync();
-        return oxygenMeasurement.Id > 1;
+        return oxygenMeasurement.Id > 0;
     }
 
     public async Task<List<OxygenMeasurement>> GetAllOxygenMeasurements()

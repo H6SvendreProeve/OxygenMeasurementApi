@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using OxygenMeasurementApi.Api.Dtos.OxygenMeasurementDtos;
+using OxygenMeasurementApi.OxygenMeasurements.Create;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
 namespace OxygenMeasurementApi.Controllers;
@@ -49,5 +49,11 @@ public class OxygenController : ControllerBase
         var oxygenMeasurements = await OxygenMeasurementService.GetSpecificAmountOfOxygenMeasurements(amount);
 
         return Ok(oxygenMeasurements);
+    }
+
+    [HttpGet("/")]
+    public IActionResult Get()
+    {
+        return Ok("hello from OxygenMeasurement api");
     }
 }

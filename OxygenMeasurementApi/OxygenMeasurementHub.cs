@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.SignalR;
-using OxygenMeasurementApi.Entities;
+using OxygenMeasurementApi.Data.Entities;
 
 namespace OxygenMeasurementApi;
 
