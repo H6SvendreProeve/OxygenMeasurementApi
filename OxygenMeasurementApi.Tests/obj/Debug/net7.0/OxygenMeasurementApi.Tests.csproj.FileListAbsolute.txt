@@ -432,3 +432,9 @@ C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasur
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\SshNet.Security.Cryptography.dll
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\Testcontainers.dll
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\Testcontainers.PostgreSql.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\bin\Debug\net7.0\refs\Microsoft.Extensions.Features.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\obj\Debug\net7.0\OxygenMeasurementApi.Tests.sourcelink.json

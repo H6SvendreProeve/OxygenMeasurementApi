@@ -51,3 +51,4 @@ C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasur
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\obj\Debug\net7.0\OxygenMeasurementApi.sourcelink.json

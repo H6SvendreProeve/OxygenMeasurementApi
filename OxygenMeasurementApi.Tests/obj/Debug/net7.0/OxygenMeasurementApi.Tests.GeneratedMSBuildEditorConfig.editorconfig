@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OxygenMeasurementApi.Tests
 build_property.ProjectDir = C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi.Tests\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

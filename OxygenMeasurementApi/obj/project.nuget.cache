@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8Ku16dw4WVRGILhLVYdIwA92pTskqECbNyK/2VeB5pngywhI3AR18uCaSE0KaJFVkheDl/A8KMpVfr1hXHk3Lg==",
+  "dgSpecHash": "o6hz4PJgLSe+JeKNk03Z7V8ZwRDPftiQyd7tp/qTVjZywfEDtA8XQGwU48r12nGHZp3Xrmc9xnaQ/+wpXsd5pg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi\\OxygenMeasurementApi.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,11 @@
     "C:\\Users\\mk\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\mk\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+    "C:\\Users\\mk\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }
