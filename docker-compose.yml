@@ -22,7 +22,7 @@ services:
       - dev
 
   oxygenmeasurement:
-    image: docker.io/library/oxygenmeasurementapi
+    image: docker.io/library/oxygenmeasurementapi:latest
     depends_on:
       - "oxygenMeasurement_db"
     container_name: "oxygenmeasurementapi_container"

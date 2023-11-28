@@ -17,7 +17,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
 
     public async Task<bool> CreateOxygenMeasurement(CreateOxygenMeasurement createOxygenMeasurement)
     {
-        var oxygenMeasurement = createOxygenMeasurement.OxygenMeasurementAsEntity();
+        var oxygenMeasurement = createOxygenMeasurement.AsEntity();
         await OxygenDbContext.OxygenMeasurements.AddAsync(oxygenMeasurement);
         await OxygenDbContext.SaveChangesAsync();
         return oxygenMeasurement.Id > 0;
@@ -35,10 +35,5 @@ public class OxygenMeasurementService : IOxygenMeasurementService
         return (from measurement in dbMeasurements
             orderby measurement.Id descending
             select measurement).Take(amount).ToList();
-    }
-
-    public async Task<OxygenMeasurement?> GetOxygenMeasurementById(int id)
-    {
-        return await OxygenDbContext.OxygenMeasurements.FindAsync(id);
     }
 }

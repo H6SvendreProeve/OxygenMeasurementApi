@@ -6,7 +6,7 @@ namespace OxygenMeasurementApi.Data.Extensions;
 public static class EntityExtensions
 {
   
-    public static OxygenMeasurement OxygenMeasurementAsEntity(this CreateOxygenMeasurement createOxygenMeasurement)
+    public static OxygenMeasurement AsEntity(this CreateOxygenMeasurement createOxygenMeasurement)
     {
         return new OxygenMeasurement
         {

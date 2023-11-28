@@ -9,9 +9,4 @@ public sealed class OxygenMeasurementHub : Hub
     {
         await Clients.All.SendAsync("ReceiveOxygenMeasurement", oxygenMeasurement);
     }
-    
-    public override async Task OnConnectedAsync()
-    {
-        await Clients.All.SendAsync("ReceiveMessage", $"{Context.ConnectionId} has joined");
-    }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o6hz4PJgLSe+JeKNk03Z7V8ZwRDPftiQyd7tp/qTVjZywfEDtA8XQGwU48r12nGHZp3Xrmc9xnaQ/+wpXsd5pg==",
+  "dgSpecHash": "WqVgwg5LzP/ZjDlx40KJOM9DgInizNsDez7SeFSSC386T7Qj9FLeNMjugqIEAcIojSegpht2EML+S4U5qoA2fw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi\\OxygenMeasurementApi.csproj",
   "expectedPackageFiles": [
@@ -45,9 +45,11 @@
     "C:\\Users\\mk\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-arm64\\7.0.14\\microsoft.netcore.app.runtime.linux-arm64.7.0.14.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-arm64\\7.0.14\\microsoft.aspnetcore.app.runtime.linux-arm64.7.0.14.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm64\\7.0.14\\microsoft.netcore.app.host.linux-arm64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

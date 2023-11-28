@@ -31,7 +31,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
 
 
-
 var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(conn); });
@@ -39,12 +38,14 @@ builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(co
 
 var app = builder.Build();
 
+/*
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<OxygenDbContext>();
-    // ensure that the database is created and updated with the migrations.
-    dbContext.Database.Migrate();
-}
+ dbContext.Database.Migrate();
+}    // ensure that the database is created and updated with the migrations.
+*/
+   
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -53,7 +54,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

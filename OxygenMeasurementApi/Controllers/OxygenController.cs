@@ -10,12 +10,10 @@ namespace OxygenMeasurementApi.Controllers;
 public class OxygenController : ControllerBase
 {
     private IOxygenMeasurementService OxygenMeasurementService { get; }
-    private ILogger<OxygenController> Logger { get; }
     private IHubContext<OxygenMeasurementHub> OxygenHub { get; }
 
-    public OxygenController(ILogger<OxygenController> logger, IOxygenMeasurementService oxygenMeasurementService,IHubContext<OxygenMeasurementHub> oxygenHub )
+    public OxygenController(IOxygenMeasurementService oxygenMeasurementService,IHubContext<OxygenMeasurementHub> oxygenHub )
     {
-        Logger = logger;
         OxygenMeasurementService = oxygenMeasurementService;
         OxygenHub = oxygenHub;
     }
