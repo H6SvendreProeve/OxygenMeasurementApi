@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using OxygenMeasurementApi;
-using OxygenMeasurementApi.Data;
 using OxygenMeasurementApi.Data.Context;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
@@ -8,17 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-/*builder.Services.AddCors(options =>
+builder.Services.AddCors(options =>
 {
     options.AddPolicy("OxygenMeasurementPolicy", corsPolicyBuilder =>
     {
-        // port 4200 is angular web applikation
-        corsPolicyBuilder.WithOrigins("http://localhost:4200", "https://localhost:4200", "https://192.168.1.2:4200",
-                "http://192.168.1.2:4200")
+        // make specific for angular ?
+        corsPolicyBuilder.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
-});*/
+});
 
 builder.Services.AddScoped<IOxygenMeasurementService, OxygenMeasurementService>();
 builder.Services.AddScoped<IOxygenDbContext, OxygenDbContext>();
@@ -38,14 +36,13 @@ builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(co
 
 var app = builder.Build();
 
-/*
+
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<OxygenDbContext>();
- dbContext.Database.Migrate();
-}    // ensure that the database is created and updated with the migrations.
-*/
-   
+    dbContext.Database.Migrate();
+} // ensure that the database is created and updated with the migrations.
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -64,4 +61,6 @@ app.MapHub<OxygenMeasurementHub>("oxygenMeasurementHub");
 
 app.Run();
 
-public partial class Program {}
+public partial class Program
+{
+}
