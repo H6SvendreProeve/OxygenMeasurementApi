@@ -1,0 +1,27 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  oxygenmeasurement:
+    build:
+      context: "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\\
+        git_repos\\OxygenMeasurementApi"
+      dockerfile: "OxygenMeasurementApi/Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/OxygenMeasurementApi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\mk\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\mk\\.nuget\\packages"
+    image: "library/oxygenmeasurementapi:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\mk\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\\
+      OxygenMeasurementApi\\OxygenMeasurementApi:/app:rw"
+    - "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\\
+      OxygenMeasurementApi:/src:rw"
+    working_dir: "/app"

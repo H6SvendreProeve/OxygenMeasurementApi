@@ -8,7 +8,7 @@ services:
   
   oxygenMeasurement_db:
     image: postgres:latest
-    container_name: oxygenMeasurement_db_container
+    container_name: "oxygenMeasurement_db_container"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -26,12 +26,12 @@ services:
     image: docker.io/library/oxygenmeasurementapi:latest
     depends_on:
       - "oxygenMeasurement_db"
-    container_name: "oxygenmeasurementapi_container"
+    container_name: "oxygenmeasurement_api_container"
     ports:
       - "8088:80"
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: OxygenMeasurementApi/Dockerfile
     command: >
       sh -c "dockerize -wait tcp://oxygenMeasurement_db:5432 -timeout 60s && dotnet OxygenMeasurementApi.dll"
     environment:
@@ -42,4 +42,4 @@ services:
       - dev
 
 volumes:
-  oxygenMeasurement_data: {}
+  oxygenMeasurement_data: { }
