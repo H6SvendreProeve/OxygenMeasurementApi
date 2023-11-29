@@ -31,22 +31,21 @@ public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsy
                     // remove the default OxygenDbContext if its configured.
                     services.Remove(descriptor);
                 }
-                
+
                 // add a new postgres OxygenDbContext with the postgresSqlTestContainers connectionString
                 services.AddDbContext<OxygenDbContext>(options =>
                     options.UseNpgsql(postgresSqlTestContainer.GetConnectionString())
                 );
-                
             }
         );
     }
-    
+
     // start the postgresSqlTestContainer
     public Task InitializeAsync()
     {
         return postgresSqlTestContainer.StartAsync();
     }
-    
+
     // stop / dispose the postgresSqlTestContainer
     public new Task DisposeAsync()
     {

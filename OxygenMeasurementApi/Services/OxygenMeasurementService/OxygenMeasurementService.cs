@@ -25,15 +25,19 @@ public class OxygenMeasurementService : IOxygenMeasurementService
 
     public async Task<List<OxygenMeasurement>> GetAllOxygenMeasurements()
     {
-        return await OxygenDbContext.OxygenMeasurements.ToListAsync();
+        var oxygenMeasurements = await OxygenDbContext.OxygenMeasurements.ToListAsync();
+        
+        return oxygenMeasurements.ConvertMeasurementTimeToLocalTimezone();
     }
 
     public async Task<List<OxygenMeasurement>> GetSpecificAmountOfOxygenMeasurements(int amount)
     {
         var dbMeasurements = await OxygenDbContext.OxygenMeasurements.ToListAsync();
 
-        return (from measurement in dbMeasurements
+        var measurements = (from measurement in dbMeasurements
             orderby measurement.Id descending
             select measurement).Take(amount).ToList();
+
+        return measurements.ConvertMeasurementTimeToLocalTimezone();
     }
 }

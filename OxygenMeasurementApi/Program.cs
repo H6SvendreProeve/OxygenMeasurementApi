@@ -5,7 +5,6 @@ using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddCors(options =>
 {
@@ -37,12 +36,11 @@ builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(co
 var app = builder.Build();
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<OxygenDbContext>();
-    dbContext.Database.Migrate();
-} // ensure that the database is created and updated with the migrations.
+using var scope = app.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetRequiredService<OxygenDbContext>();
+dbContext.Database.Migrate();
 
+// ensure that the database is created and updated with the migrations.
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

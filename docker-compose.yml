@@ -13,6 +13,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=OxygenMeasurementDb
+      - TZ=Europe/Copenhagen
     ports:
       - "5433:5432"
     restart: always
@@ -31,13 +32,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: [ "dockerize", "-wait", "tcp://oxygenMeasurement_db:5432", "-timeout", "60s", "dotnet", "OxygenMeasurementApi.dll" ]
+    command: >
+      sh -c "dockerize -wait tcp://oxygenMeasurement_db:5432 -timeout 60s && dotnet OxygenMeasurementApi.dll"
     environment:
-      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=postgres;Server=oxygenMeasurement_db;port=5432;Database=OxygenMeasurementDb; IntegratedSecurity=true;Pooling=true;
+      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=postgres;Server=oxygenMeasurement_db;port=5432;Database=OxygenMeasurementDb;IntegratedSecurity=true;Pooling=true;
       - ASPNETCORE_URLS=HTTP://+:80
+      - TZ=Europe/Copenhagen
     networks:
       - dev
-
 
 volumes:
   oxygenMeasurement_data: {}
