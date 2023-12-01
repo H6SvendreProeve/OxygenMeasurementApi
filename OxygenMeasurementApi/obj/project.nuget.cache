@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o6hz4PJgLSe+JeKNk03Z7V8ZwRDPftiQyd7tp/qTVjZywfEDtA8XQGwU48r12nGHZp3Xrmc9xnaQ/+wpXsd5pg==",
+  "dgSpecHash": "jS7nJj5yzj+7yKpM9ZHaMwto3U5am/hTsI1PtCffIlUZ53uQxE8AvcAwtvShI7Y6gLAus3F9/lyUG774EWAPkQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi\\OxygenMeasurementApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mk\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\7.0.14\\microsoft.aspnetcore.connections.abstractions.7.0.14.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\7.0.14\\microsoft.aspnetcore.http.connections.client.7.0.14.nupkg.sha512",
@@ -17,6 +18,7 @@
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.11\\microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.11\\microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\7.0.11\\microsoft.entityframeworkcore.proxies.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.11\\microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.11\\microsoft.entityframeworkcore.tools.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
@@ -40,6 +42,7 @@
     "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

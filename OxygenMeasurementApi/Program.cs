@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using OxygenMeasurementApi;
+using OxygenMeasurementApi.Authorization.Filters;
 using OxygenMeasurementApi.Data.Context;
+using OxygenMeasurementApi.Services.ApiKeyService;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
+using OxygenMeasurementApi.Services.OxygenMeasurementSystemService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +20,10 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddScoped<IApiKeyService, ApiKeyService>();
+builder.Services.AddScoped<ApiKeyAuthorizationFilter>();
 builder.Services.AddScoped<IOxygenMeasurementService, OxygenMeasurementService>();
+builder.Services.AddScoped<IOxygenMeasurementSystemService, OxygenMeasurementSystemService>();
 builder.Services.AddScoped<IOxygenDbContext, OxygenDbContext>();
 
 builder.Services.AddControllers();

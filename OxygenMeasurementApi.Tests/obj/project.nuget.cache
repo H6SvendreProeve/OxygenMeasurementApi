@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EGJZ7IEnDv9hQOfAtXRXrz/Jn98o0NIwsH23Elw2SGkt/Xb15l4fnPwhrCKYcKO7xokX9OKuI/2RatOx8K4Uhw==",
+  "dgSpecHash": "QghlPl1mH/kkx+ay1Ugj+zJ1Y0mT2I3LBjbokPJrgmfm5TkobhJ16tTkTsYwj2gVQGPehZ3KO95hn5wH97qzDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi.Tests\\OxygenMeasurementApi.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mk\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\docker.dotnet\\3.125.15\\docker.dotnet.3.125.15.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\docker.dotnet.x509\\3.125.15\\docker.dotnet.x509.3.125.15.nupkg.sha512",
@@ -23,6 +24,7 @@
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.11\\microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\7.0.11\\microsoft.entityframeworkcore.proxies.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.11\\microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",

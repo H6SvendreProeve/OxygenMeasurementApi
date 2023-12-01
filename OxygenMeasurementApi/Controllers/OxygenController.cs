@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using OxygenMeasurementApi.Authorization.Filters;
 using OxygenMeasurementApi.OxygenMeasurements.Create;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
 
@@ -7,6 +9,7 @@ namespace OxygenMeasurementApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[ServiceFilter(typeof(ApiKeyAuthorizationFilter))]
 public class OxygenController : ControllerBase
 {
     private IOxygenMeasurementService OxygenMeasurementService { get; }
@@ -33,6 +36,7 @@ public class OxygenController : ControllerBase
         return Created("result", created);
     }
 
+    [AllowAnonymous]
     [HttpGet("GetAllOxygenMeasurements")]
     public async Task<IActionResult> GetAllOxygenMeasurements()
     {
@@ -41,6 +45,7 @@ public class OxygenController : ControllerBase
         return Ok(oxygenMeasurements);
     }
 
+    [AllowAnonymous]
     [HttpGet("GetSpecificAmountOfOxygenMeasurements")]
     public async Task<IActionResult> GetSpecificAmountOfOxygenMeasurements([FromQuery] int amount)
     {
