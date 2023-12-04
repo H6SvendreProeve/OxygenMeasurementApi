@@ -1,9 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using OxygenMeasurementApi;
 using OxygenMeasurementApi.Authorization.Filters;
 using OxygenMeasurementApi.Data.Context;
-using OxygenMeasurementApi.Data.Entities;
 using OxygenMeasurementApi.Middlewares;
 using OxygenMeasurementApi.Services.ApiKeyService;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
@@ -86,9 +84,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddSignalR();
-
-
 var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(conn); });
@@ -124,8 +119,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
-
-app.MapHub<OxygenMeasurementHub>("oxygenMeasurementHub");
 
 app.Run();
 

@@ -48,10 +48,6 @@
               "target": "Package",
               "version": "[7.0.14, )"
             },
-            "Microsoft.AspNetCore.SignalR.Client": {
-              "target": "Package",
-              "version": "[7.0.14, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.7.1, )"
@@ -158,10 +154,6 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.13, )"
-            },
-            "Microsoft.AspNetCore.SignalR.Client": {
-              "target": "Package",
-              "version": "[7.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",

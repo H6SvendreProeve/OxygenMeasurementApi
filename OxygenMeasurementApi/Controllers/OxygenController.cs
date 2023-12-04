@@ -12,13 +12,10 @@ namespace OxygenMeasurementApi.Controllers;
 public class OxygenController : ControllerBase
 {
     private readonly IOxygenMeasurementService oxygenMeasurementService;
-    private readonly IHubContext<OxygenMeasurementHub> oxygenHub;
 
-    public OxygenController(IOxygenMeasurementService oxygenMeasurementService,
-        IHubContext<OxygenMeasurementHub> oxygenHub)
+    public OxygenController(IOxygenMeasurementService oxygenMeasurementService)
     {
         this.oxygenMeasurementService = oxygenMeasurementService;
-        this.oxygenHub = oxygenHub;
     }
 
     [HttpGet("/")]
@@ -37,8 +34,6 @@ public class OxygenController : ControllerBase
         {
             return BadRequest("Failed to create oxygen measurement");
         }
-
-        await oxygenHub.Clients.All.SendAsync("ReceiveOxygenMeasurement", createdOxygenMeasurement);
 
         return CreatedAtAction(nameof(GetOxygenMeasurementById), new { id = createdOxygenMeasurement.Id },
             createdOxygenMeasurement);
