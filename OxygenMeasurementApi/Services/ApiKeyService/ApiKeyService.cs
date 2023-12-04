@@ -5,11 +5,11 @@ namespace OxygenMeasurementApi.Services.ApiKeyService;
 
 public class ApiKeyService : IApiKeyService
 {
-    private IOxygenDbContext OxygenDbContext { get; }
+    private readonly IOxygenDbContext oxygenDbContext;
     
-    public ApiKeyService(IOxygenDbContext oxygenDbContext)
+    public ApiKeyService(IOxygenDbContext dbContext)
     {
-        OxygenDbContext = oxygenDbContext;
+        oxygenDbContext = dbContext;
     }
 
     public async Task<bool> ValidateApiKey(int systemId, string apiKey)
@@ -21,8 +21,8 @@ public class ApiKeyService : IApiKeyService
             return isValid;
         }
 
-        var apiKeyFromDb = await OxygenDbContext.ApiKeys.FirstOrDefaultAsync(key =>
-            key.ApiKeyId == apiKey && key.OxygenMeasurementSystem.Id == systemId);
+        var apiKeyFromDb = await oxygenDbContext.ApiKeys.FirstOrDefaultAsync(key =>
+            key.ApiKeyValue == apiKey  && key.OxygenMeasurementSystem.Id == systemId);
 
         if (apiKeyFromDb != null)
         {

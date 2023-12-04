@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QghlPl1mH/kkx+ay1Ugj+zJ1Y0mT2I3LBjbokPJrgmfm5TkobhJ16tTkTsYwj2gVQGPehZ3KO95hn5wH97qzDw==",
+  "dgSpecHash": "qTCewqSQIfFIBAWchX5G10bX911V/EIXh88We6mdp+Eud2Kc6wYPDYW0O2YpZoTt9FnfjmD5EnfB9zKTKMc0jw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mk\\Documents\\dokumenter\\skole\\ZBC\\ZBC moduler\\H6\\git_repos\\OxygenMeasurementApi\\OxygenMeasurementApi.Tests\\OxygenMeasurementApi.Tests.csproj",
   "expectedPackageFiles": [
@@ -155,7 +155,7 @@
     "C:\\Users\\mk\\.nuget\\packages\\xunit\\2.4.2\\xunit.2.4.2.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\xunit.analyzers\\1.0.0\\xunit.analyzers.1.0.0.nupkg.sha512",
-    "C:\\Users\\mk\\.nuget\\packages\\xunit.assert\\2.4.2\\xunit.assert.2.4.2.nupkg.sha512",
+    "C:\\Users\\mk\\.nuget\\packages\\xunit.assert\\2.6.2\\xunit.assert.2.6.2.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\mk\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",

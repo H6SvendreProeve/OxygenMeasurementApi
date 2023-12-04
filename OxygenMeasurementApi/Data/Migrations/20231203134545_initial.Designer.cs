@@ -12,8 +12,8 @@ using OxygenMeasurementApi.Data.Context;
 namespace OxygenMeasurementApi.Migrations
 {
     [DbContext(typeof(OxygenDbContext))]
-    [Migration("20231130191401_added apikey and oxygenMeasurementSystem")]
-    partial class addedapikeyandoxygenMeasurementSystem
+    [Migration("20231203134545_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,7 +30,14 @@ namespace OxygenMeasurementApi.Migrations
 
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.ApiKey", b =>
                 {
-                    b.Property<string>("ApiKeyId")
+                    b.Property<int>("ApiKeyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ApiKeyId"));
+
+                    b.Property<string>("ApiKeyValue")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("ApiKeyId");
@@ -49,11 +56,16 @@ namespace OxygenMeasurementApi.Migrations
                     b.Property<DateTime>("MeasurementTime")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("OxygenMeasurementSystemId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("OxygenValue")
                         .HasPrecision(4, 2)
                         .HasColumnType("numeric(4,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OxygenMeasurementSystemId");
 
                     b.ToTable("OxygenMeasurements");
                 });
@@ -66,13 +78,8 @@ namespace OxygenMeasurementApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdminstratorEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ApiKeyId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("ApiKeyId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -94,6 +101,39 @@ namespace OxygenMeasurementApi.Migrations
                     b.ToTable("OxygenMeasurementSystems");
                 });
 
+            modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.SystemNotificationAdvisor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("OxygenMeasurementSystemId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OxygenMeasurementSystemId");
+
+                    b.ToTable("SystemNotificationAdvisor");
+                });
+
+            modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurement", b =>
+                {
+                    b.HasOne("OxygenMeasurementApi.Data.Entities.OxygenMeasurementSystem", "OxygenMeasurementSystem")
+                        .WithMany("OxygenMeasurements")
+                        .HasForeignKey("OxygenMeasurementSystemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OxygenMeasurementSystem");
+                });
+
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurementSystem", b =>
                 {
                     b.HasOne("OxygenMeasurementApi.Data.Entities.ApiKey", "ApiKey")
@@ -105,10 +145,28 @@ namespace OxygenMeasurementApi.Migrations
                     b.Navigation("ApiKey");
                 });
 
+            modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.SystemNotificationAdvisor", b =>
+                {
+                    b.HasOne("OxygenMeasurementApi.Data.Entities.OxygenMeasurementSystem", "OxygenMeasurementSystem")
+                        .WithMany("SystemNotificationAdvisors")
+                        .HasForeignKey("OxygenMeasurementSystemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OxygenMeasurementSystem");
+                });
+
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.ApiKey", b =>
                 {
                     b.Navigation("OxygenMeasurementSystem")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurementSystem", b =>
+                {
+                    b.Navigation("OxygenMeasurements");
+
+                    b.Navigation("SystemNotificationAdvisors");
                 });
 #pragma warning restore 612, 618
         }
