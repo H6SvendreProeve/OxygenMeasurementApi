@@ -12,7 +12,7 @@ using OxygenMeasurementApi.Data.Context;
 namespace OxygenMeasurementApi.Migrations
 {
     [DbContext(typeof(OxygenDbContext))]
-    [Migration("20231203134545_initial")]
+    [Migration("20231204111706_initial")]
     partial class initial
     {
         /// <inheritdoc />
