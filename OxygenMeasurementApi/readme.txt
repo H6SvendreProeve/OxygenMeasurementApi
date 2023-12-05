@@ -1,7 +1,7 @@
 when using docker desktop you can run the api and database with the following commands.
 
 build the image locally.
-docker build -t oxygenmeasurementapi:latest
+docker build . -t oxygenmeasurementapi:latest
 
 run the docker compose file, you might want to change directory to OxygenMeasurementApi project folder.
 docker compose up
