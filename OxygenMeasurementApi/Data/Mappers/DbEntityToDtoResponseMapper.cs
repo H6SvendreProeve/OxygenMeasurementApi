@@ -9,7 +9,7 @@ public static class DbEntityToDtoResponseMapper
     {
         return new OxygenMeasurementSystemResponseDto
         {
-            Id = oxygenMeasurementSystem.Id,
+            Id = oxygenMeasurementSystem.OxygenMeasurementSystemId,
             SystemName = oxygenMeasurementSystem.SystemName,
             Zipcode = oxygenMeasurementSystem.Zipcode,
             Location = oxygenMeasurementSystem.Location,
@@ -22,7 +22,7 @@ public static class DbEntityToDtoResponseMapper
     {
         return new SystemNotificationAdvisorResponseDto
         {
-            Id = systemNotificationAdvisor.Id,
+            Id = systemNotificationAdvisor.SystemNotificationAdvisorId,
             Email = systemNotificationAdvisor.Email
         };
     }
@@ -55,7 +55,7 @@ public static class DbEntityToDtoResponseMapper
     {
         return new OxygenMeasurementSystemsResponseDto
         {
-            Id = oxygenMeasurementSystem.Id,
+            Id = oxygenMeasurementSystem.OxygenMeasurementSystemId,
             SystemName = oxygenMeasurementSystem.SystemName,
             Zipcode = oxygenMeasurementSystem.Zipcode,
             Location = oxygenMeasurementSystem.Location

@@ -1,8 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using OxygenMeasurementApi.Exceptions;
-using ArgumentException = System.ArgumentException;
-using UnauthorizedAccessException = System.UnauthorizedAccessException;
 
 namespace OxygenMeasurementApi.Middlewares;
 
@@ -53,22 +51,14 @@ public class GlobalExceptionMiddleware
             case BadRequestException:
             case CustomArgumentOutOfRangeException:
                 return (HttpStatusCode.BadRequest, exception.Message);
-
-            case UnauthorizedAccessException unauthorizedAccessException:
-                return (HttpStatusCode.Unauthorized, unauthorizedAccessException.Message);
-
-            case KeyNotFoundException:
-            case HeaderNotFoundException:
+            
             case NotFoundException:
             case ArgumentException:
                 return (HttpStatusCode.NotFound, exception.Message);
-
-
+            
             case CustomDbException:
                 return (HttpStatusCode.InternalServerError,
                     "An error happened on the database level. Contact the administrator for further information");
-            case InternalServerException:
-                return (HttpStatusCode.InternalServerError, "An unexpected error occured");
 
             default:
                 return (HttpStatusCode.InternalServerError, "An unexpected error occurred");

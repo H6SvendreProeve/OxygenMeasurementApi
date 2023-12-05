@@ -19,7 +19,7 @@ public class OxygenMeasurementSystemService : IOxygenMeasurementSystemService
     public async Task<OxygenMeasurementSystemResponseDto?> GetOxygenMeasurementSystemByIdAsync(int id)
     {
         var dbOxygenMeasurementSystem =
-            await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.Id == id);
+            await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.OxygenMeasurementSystemId == id);
 
         if (dbOxygenMeasurementSystem == null)
         {

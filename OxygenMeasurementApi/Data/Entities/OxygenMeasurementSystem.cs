@@ -2,7 +2,7 @@ namespace OxygenMeasurementApi.Data.Entities;
 
 public class OxygenMeasurementSystem
 {
-    public int Id { get; set; }
+    public int OxygenMeasurementSystemId { get; set; }
     public string SystemName { get; set; }
     public string Zipcode { get; set; }
     public string Location { get; set; }

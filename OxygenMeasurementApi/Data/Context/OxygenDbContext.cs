@@ -50,5 +50,5 @@ public class OxygenDbContext : DbContext, IOxygenDbContext
     public DbSet<ApiKey> ApiKeys { get; set; }
     public DbSet<OxygenMeasurementSystem> OxygenMeasurementSystems { get; set; }
     
-    public DbSet<SystemNotificationAdvisor> SystemNotificationAdvisor { get; set; }
+    public DbSet<SystemNotificationAdvisor> SystemNotificationAdvisors { get; set; }
 }

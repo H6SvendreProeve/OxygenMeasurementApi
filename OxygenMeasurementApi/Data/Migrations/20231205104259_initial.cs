@@ -29,7 +29,7 @@ namespace OxygenMeasurementApi.Migrations
                 name: "OxygenMeasurementSystems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    OxygenMeasurementSystemId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     SystemName = table.Column<string>(type: "text", nullable: false),
                     Zipcode = table.Column<string>(type: "text", nullable: false),
@@ -38,7 +38,7 @@ namespace OxygenMeasurementApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OxygenMeasurementSystems", x => x.Id);
+                    table.PrimaryKey("PK_OxygenMeasurementSystems", x => x.OxygenMeasurementSystemId);
                     table.ForeignKey(
                         name: "FK_OxygenMeasurementSystems_ApiKeys_ApiKeyId",
                         column: x => x.ApiKeyId,
@@ -64,27 +64,27 @@ namespace OxygenMeasurementApi.Migrations
                         name: "FK_OxygenMeasurements_OxygenMeasurementSystems_OxygenMeasureme~",
                         column: x => x.OxygenMeasurementSystemId,
                         principalTable: "OxygenMeasurementSystems",
-                        principalColumn: "Id",
+                        principalColumn: "OxygenMeasurementSystemId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SystemNotificationAdvisor",
+                name: "SystemNotificationAdvisors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    SystemNotificationAdvisorId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Email = table.Column<string>(type: "text", nullable: false),
                     OxygenMeasurementSystemId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SystemNotificationAdvisor", x => x.Id);
+                    table.PrimaryKey("PK_SystemNotificationAdvisors", x => x.SystemNotificationAdvisorId);
                     table.ForeignKey(
-                        name: "FK_SystemNotificationAdvisor_OxygenMeasurementSystems_OxygenMe~",
+                        name: "FK_SystemNotificationAdvisors_OxygenMeasurementSystems_OxygenM~",
                         column: x => x.OxygenMeasurementSystemId,
                         principalTable: "OxygenMeasurementSystems",
-                        principalColumn: "Id",
+                        principalColumn: "OxygenMeasurementSystemId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -100,8 +100,8 @@ namespace OxygenMeasurementApi.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_SystemNotificationAdvisor_OxygenMeasurementSystemId",
-                table: "SystemNotificationAdvisor",
+                name: "IX_SystemNotificationAdvisors_OxygenMeasurementSystemId",
+                table: "SystemNotificationAdvisors",
                 column: "OxygenMeasurementSystemId");
         }
 
@@ -112,7 +112,7 @@ namespace OxygenMeasurementApi.Migrations
                 name: "OxygenMeasurements");
 
             migrationBuilder.DropTable(
-                name: "SystemNotificationAdvisor");
+                name: "SystemNotificationAdvisors");
 
             migrationBuilder.DropTable(
                 name: "OxygenMeasurementSystems");

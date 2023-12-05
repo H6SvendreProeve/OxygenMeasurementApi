@@ -23,7 +23,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
         try
         {
             var dbOxygenMeasurementSystem = await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms =>
-                oms.Id == oxygenMeasurementDto.OxygenMeasurementSystemId);
+                oms.OxygenMeasurementSystemId == oxygenMeasurementDto.OxygenMeasurementSystemId);
 
             if (dbOxygenMeasurementSystem == null)
             {
@@ -39,7 +39,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
             {
                 oxygenMeasurement.OxygenMeasurementSystem =
                     oxygenDbContext.OxygenMeasurementSystems.First(oms =>
-                        oms.Id == oxygenMeasurement.OxygenMeasurementSystemId);
+                        oms.OxygenMeasurementSystemId == oxygenMeasurement.OxygenMeasurementSystemId);
             }
 
             return oxygenMeasurement.ToResponse();
@@ -74,7 +74,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
     public async Task<List<OxygenMeasurementResponseDto?>> GetAllSystemOxygenMeasurementsAsync(int systemId)
     {
         var dbOxygenMeasurementSystem = await
-            oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.Id == systemId);
+            oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.OxygenMeasurementSystemId == systemId);
 
         if (dbOxygenMeasurementSystem == null)
         {
@@ -105,7 +105,7 @@ public class OxygenMeasurementService : IOxygenMeasurementService
     public async Task<List<OxygenMeasurementResponseDto?>> GetSpecificAmountOfOxygenMeasurementsAsync(int systemId,
         int amount)
     {
-        var dbSystem = await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.Id == systemId);
+        var dbSystem = await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms => oms.OxygenMeasurementSystemId == systemId);
 
         if (dbSystem == null)
         {

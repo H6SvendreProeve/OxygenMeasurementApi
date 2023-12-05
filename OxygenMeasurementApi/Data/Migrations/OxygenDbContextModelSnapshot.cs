@@ -69,11 +69,11 @@ namespace OxygenMeasurementApi.Migrations
 
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurementSystem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("OxygenMeasurementSystemId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OxygenMeasurementSystemId"));
 
                     b.Property<int>("ApiKeyId")
                         .HasColumnType("integer");
@@ -90,7 +90,7 @@ namespace OxygenMeasurementApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("OxygenMeasurementSystemId");
 
                     b.HasIndex("ApiKeyId")
                         .IsUnique();
@@ -100,11 +100,11 @@ namespace OxygenMeasurementApi.Migrations
 
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.SystemNotificationAdvisor", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SystemNotificationAdvisorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SystemNotificationAdvisorId"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -113,11 +113,11 @@ namespace OxygenMeasurementApi.Migrations
                     b.Property<int>("OxygenMeasurementSystemId")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
+                    b.HasKey("SystemNotificationAdvisorId");
 
                     b.HasIndex("OxygenMeasurementSystemId");
 
-                    b.ToTable("SystemNotificationAdvisor");
+                    b.ToTable("SystemNotificationAdvisors");
                 });
 
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurement", b =>

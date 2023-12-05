@@ -22,7 +22,7 @@ public class ApiKeyService : IApiKeyService
         }
 
         var apiKeyFromDb = await oxygenDbContext.ApiKeys.FirstOrDefaultAsync(key =>
-            key.ApiKeyValue == apiKey  && key.OxygenMeasurementSystem.Id == systemId);
+            key.ApiKeyValue == apiKey  && key.OxygenMeasurementSystem.OxygenMeasurementSystemId == systemId);
 
         if (apiKeyFromDb != null)
         {
