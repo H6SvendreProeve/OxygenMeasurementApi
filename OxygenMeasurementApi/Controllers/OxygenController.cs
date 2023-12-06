@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using OxygenMeasurementApi.Authorization.Filters;
 using OxygenMeasurementApi.Data.Dtos.RequestDtos;
 using OxygenMeasurementApi.Services.OxygenMeasurementService;
+using OxygenMeasurementMailLibrary;
 
 namespace OxygenMeasurementApi.Controllers;
 
@@ -13,11 +14,21 @@ namespace OxygenMeasurementApi.Controllers;
 public class OxygenController : ControllerBase
 {
     private readonly IOxygenMeasurementService oxygenMeasurementService;
+ 
+    private MailHandler MailHandler { get; }
+    private OxygenMail OxygenMail { get; set; }
+
+    private SmtpConfigLoader ConfigLoader { get; set; }
 
     // Constructor that takes an IOxygenMeasurementService dependency to interact with oxygen measurements.
-    public OxygenController(IOxygenMeasurementService oxygenMeasurementService)
+    public OxygenController(IOxygenMeasurementService oxygenMeasurementService, SmtpConfigLoader configLoader)
     {
         this.oxygenMeasurementService = oxygenMeasurementService;
+        ConfigLoader = configLoader;
+
+        MailHandler = new MailHandler(ConfigLoader.SmtpConfig?.SmtpUser, ConfigLoader.SmtpConfig.SmtpPassword, ConfigLoader.SmtpConfig.SmtpHost, ConfigLoader.SmtpConfig.Port);
+        OxygenMail = new OxygenMail(MailHandler);
+
     }
 
 
@@ -29,7 +40,7 @@ public class OxygenController : ControllerBase
     /// if the operation was successful. A response indicating the result of the operation and the newly created OxygenMeasurement
     /// or a badRequest
     /// </returns>
-    [ServiceFilter(typeof(ApiKeyAuthorizationFilter))]
+   // [ServiceFilter(typeof(ApiKeyAuthorizationFilter))]
     [HttpPost("PostOxygenMeasurement")]
     public async Task<IActionResult> PostOxygenMeasurement(AddOxygenMeasurementRequestDto addOxygenMeasurement)
     {
@@ -39,6 +50,12 @@ public class OxygenController : ControllerBase
         {
             return BadRequest("Failed to create oxygen measurement");
         }
+
+        var mailReceivers =
+            await oxygenMeasurementService.GetSystemNotificationAdvisors(createdOxygenMeasurement
+                .OxygenMeasurementSystemId);
+        
+        OxygenMail.SendMailToSubscribes(mailReceivers, OxygenMail.MailOptions.Harvest);
 
         // Return a 201 Created response with the newly created OxygenMeasurement.
         return CreatedAtAction(nameof(GetOxygenMeasurementById), new { id = createdOxygenMeasurement.Id },

@@ -1,5 +1,4 @@
 using OxygenMeasurementApi.Data.Dtos.RequestDtos;
-using OxygenMeasurementApi.Data.Entities;
 
 namespace OxygenMeasurementApi.Tests.MockTestData;
 
@@ -10,9 +9,8 @@ public static class TestDataProvider
         return new AddOxygenMeasurementSystemRequestDto
         {
             SystemName = "test",
-            Zipcode = "4100",
             Location = "ringsted",
-            SystemNotificationAdvisors = new List<SystemNotificationAdvisorDto>
+            SystemNotificationAdvisors = new List<AddSystemNotificationAdvisorRequestDto>
             {
                 new()
                 {

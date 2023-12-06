@@ -192,4 +192,12 @@ public class OxygenMeasurementService : IOxygenMeasurementService
 
         return measurements;
     }
+
+    public async Task<List<string>> GetSystemNotificationAdvisors(int systemId)
+    {
+        var systemNotificationAdvisors =
+            await oxygenDbContext.SystemNotificationAdvisors.Where(sna => sna.OxygenMeasurementSystemId == systemId).ToListAsync();
+
+        return systemNotificationAdvisors.Select(sna => sna.Email).ToList();
+    }
 }

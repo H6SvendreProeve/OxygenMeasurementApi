@@ -44,3 +44,10 @@ C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasur
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\obj\Debug\net7.0\OxygenMeasurementApi.sourcelink.json
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Castle.Core.dll
 C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\MailKit.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\MimeKit.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\OxygenMeasurementMailLibrary.dll
+C:\Users\mk\Documents\dokumenter\skole\ZBC\ZBC moduler\H6\git_repos\OxygenMeasurementApi\OxygenMeasurementApi\bin\Debug\net7.0\OxygenMeasurementMailLibrary.pdb

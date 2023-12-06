@@ -1,6 +1,5 @@
 using OxygenMeasurementApi.Data.Dtos.RequestDtos;
 using OxygenMeasurementApi.Data.Dtos.ResponseDtos;
-using OxygenMeasurementApi.Data.Entities;
 
 namespace OxygenMeasurementApi.Services.OxygenMeasurementService;
 
@@ -46,4 +45,6 @@ public interface IOxygenMeasurementService
     /// <param name="amount">The desired amount of Oxygen Measurements.</param>
     /// <returns>A task that represents the asynchronous operation, returning a list of the latest Oxygen Measurement response DTOs for the specified system.</returns>
     Task<List<OxygenMeasurementResponseDto?>> GetSpecificAmountOfOxygenMeasurementsAsync(int systemId, int amount);
+
+    Task<List<string>> GetSystemNotificationAdvisors(int systemId);
 }

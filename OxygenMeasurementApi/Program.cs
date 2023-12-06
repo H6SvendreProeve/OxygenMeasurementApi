@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using OxygenMeasurementApi;
 using OxygenMeasurementApi.Authorization.Filters;
 using OxygenMeasurementApi.Data.Context;
 using OxygenMeasurementApi.Middlewares;
@@ -17,6 +18,7 @@ builder.Services.AddScoped<IOxygenMeasurementService, OxygenMeasurementService>(
 builder.Services.AddScoped<IOxygenMeasurementSystemService, OxygenMeasurementSystemService>();
 builder.Services.AddScoped<IOxygenDbContext, OxygenDbContext>();
 builder.Services.AddSingleton<Logger>();
+builder.Services.AddSingleton<SmtpConfigLoader>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
