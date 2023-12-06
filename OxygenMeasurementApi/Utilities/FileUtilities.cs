@@ -2,8 +2,16 @@ using System.Text;
 
 namespace OxygenMeasurementApi.Utilities;
 
+/// <summary>
+/// 
+/// </summary>
 public static class FileUtilities
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="file"></param>
+    /// <returns></returns>
     public static bool FileExists(this string file)
     {
         bool exists = false;
@@ -17,7 +25,12 @@ public static class FileUtilities
 
         return exists;
     }
-
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="pathFileName"></param>
+    /// <param name="encoding"></param>
     public static void CreateFileIfNotExists(this string pathFileName, Encoding encoding)
     {
         if (pathFileName.FileExists()) return;

@@ -10,19 +10,7 @@ using OxygenMeasurementApi.Logger;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("OxygenMeasurementPolicy", corsPolicyBuilder =>
-    {
-        // make specific for angular ?
-        corsPolicyBuilder.AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-    });
-});
-
-
+// Dependency injection setup for services and filters.
 builder.Services.AddScoped<IApiKeyService, ApiKeyService>();
 builder.Services.AddScoped<ApiKeyAuthorizationFilter>();
 builder.Services.AddScoped<IOxygenMeasurementService, OxygenMeasurementService>();
@@ -86,6 +74,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 
+// Configure DbContext for PostgreSQL using the provided connection string.
 builder.Services.AddDbContext<OxygenDbContext>(options => { options.UseNpgsql(conn); });
 
 
@@ -114,10 +103,12 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 
+// Enable authorization and map controllers.
 app.UseAuthorization();
 
 app.MapControllers();
 
+// Use custom middleware for handling global exceptions.
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.Run();

@@ -32,7 +32,6 @@ namespace OxygenMeasurementApi.Migrations
                     OxygenMeasurementSystemId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     SystemName = table.Column<string>(type: "text", nullable: false),
-                    Zipcode = table.Column<string>(type: "text", nullable: false),
                     Location = table.Column<string>(type: "text", nullable: false),
                     ApiKeyId = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -51,7 +50,7 @@ namespace OxygenMeasurementApi.Migrations
                 name: "OxygenMeasurements",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    OxygenMeasurementId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     OxygenValue = table.Column<decimal>(type: "numeric(4,2)", precision: 4, scale: 2, nullable: false),
                     MeasurementTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -59,7 +58,7 @@ namespace OxygenMeasurementApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OxygenMeasurements", x => x.Id);
+                    table.PrimaryKey("PK_OxygenMeasurements", x => x.OxygenMeasurementId);
                     table.ForeignKey(
                         name: "FK_OxygenMeasurements_OxygenMeasurementSystems_OxygenMeasureme~",
                         column: x => x.OxygenMeasurementSystemId,

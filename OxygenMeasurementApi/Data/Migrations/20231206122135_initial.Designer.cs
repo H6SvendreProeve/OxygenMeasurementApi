@@ -12,7 +12,7 @@ using OxygenMeasurementApi.Data.Context;
 namespace OxygenMeasurementApi.Migrations
 {
     [DbContext(typeof(OxygenDbContext))]
-    [Migration("20231205104259_initial")]
+    [Migration("20231206122135_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -47,11 +47,11 @@ namespace OxygenMeasurementApi.Migrations
 
             modelBuilder.Entity("OxygenMeasurementApi.Data.Entities.OxygenMeasurement", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("OxygenMeasurementId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OxygenMeasurementId"));
 
                     b.Property<DateTime>("MeasurementTime")
                         .HasColumnType("timestamp with time zone");
@@ -63,7 +63,7 @@ namespace OxygenMeasurementApi.Migrations
                         .HasPrecision(4, 2)
                         .HasColumnType("numeric(4,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("OxygenMeasurementId");
 
                     b.HasIndex("OxygenMeasurementSystemId");
 
@@ -86,10 +86,6 @@ namespace OxygenMeasurementApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("SystemName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Zipcode")
                         .IsRequired()
                         .HasColumnType("text");
 

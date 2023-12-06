@@ -1,7 +1,9 @@
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace OxygenMeasurementApi.Data.Entities;
 
+/// <summary>
+/// EntityFramework Entity.
+/// With a relationship to OxygenMeasurementSystem
+/// </summary>
 public class SystemNotificationAdvisor
 {
     public int SystemNotificationAdvisorId { get; set; }

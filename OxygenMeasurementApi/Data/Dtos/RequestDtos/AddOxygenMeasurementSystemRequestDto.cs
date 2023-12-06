@@ -1,17 +1,20 @@
 using System.ComponentModel.DataAnnotations;
-using OxygenMeasurementApi.Data.Entities;
 
 namespace OxygenMeasurementApi.Data.Dtos.RequestDtos;
 
+/// <summary>
+/// Data transfer object (DTO) for adding a new OxygenMeasurementSystem.
+/// </summary>
 public class AddOxygenMeasurementSystemRequestDto
 {
-    [Required]
+    /// <value>The name of the system. Must be a required non-null string.</value>
+    [Required(ErrorMessage = "SystemName is required.")]
     public string SystemName { get; init; }
-    [Required]
-    public string Zipcode { get; init; }
-    [Required]
+    /// <value>The location of the system. Must be a required non-null string.</value>
+    [Required(ErrorMessage = "Location is required.")]
     public string Location { get; init; }
-    [Required]
-    public List<SystemNotificationAdvisorDto> SystemNotificationAdvisors { get; init; }
+    /// <value>The list of system notification advisors. Must be a required non-null list.</value>
+    [Required(ErrorMessage = "SystemNotificationAdvisors is required.")]
+    public List<AddSystemNotificationAdvisorRequestDto> SystemNotificationAdvisors { get; init; }
     
 }
