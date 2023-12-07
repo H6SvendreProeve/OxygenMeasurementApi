@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OxygenMeasurementApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+414cb2c45d5c69c16bace60409bd5476c1593b14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a149f3de6cc25252910a94423f101d965d619f3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("OxygenMeasurementApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OxygenMeasurementApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

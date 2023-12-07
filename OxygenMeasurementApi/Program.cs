@@ -11,6 +11,19 @@ using OxygenMeasurementApi.Logger;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificNetwork",
+        corsPolicyBuilder =>
+        {
+            corsPolicyBuilder.SetIsOriginAllowed(origin => origin.StartsWith("http://192.168.") || origin.StartsWith("http://10."))
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
 // Dependency injection setup for services and filters.
 builder.Services.AddScoped<IApiKeyService, ApiKeyService>();
 builder.Services.AddScoped<ApiKeyAuthorizationFilter>();

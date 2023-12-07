@@ -20,14 +20,6 @@ public interface IOxygenMeasurementSystemService
 
     public Task<OxygenMeasurementSystemResponseDto?> GetOxygenMeasurementSystemByIdAsync(int id);
     
-    /// <summary>
-    /// Retrieves all Oxygen Measurement Systems in the system.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="Task{TResult}"/> representing the asynchronous operation, containing a list of
-    /// <see cref="OxygenMeasurementSystemsResponseDto"/> representing all Oxygen Measurement Systems.
-    /// </returns>
-    Task<List<OxygenMeasurementSystemsResponseDto?>> GetAllOxygenMeasurementSystemsAsync();
 
     /// <summary>
     /// Adds a new Oxygen Measurement System to the system.

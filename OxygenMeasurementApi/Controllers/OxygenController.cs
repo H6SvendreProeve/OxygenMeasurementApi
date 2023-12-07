@@ -14,7 +14,7 @@ namespace OxygenMeasurementApi.Controllers;
 public class OxygenController : ControllerBase
 {
     private readonly IOxygenMeasurementService oxygenMeasurementService;
- 
+
     private MailHandler MailHandler { get; }
     private OxygenMail OxygenMail { get; set; }
 
@@ -26,12 +26,11 @@ public class OxygenController : ControllerBase
         this.oxygenMeasurementService = oxygenMeasurementService;
         ConfigLoader = configLoader;
 
-        MailHandler = new MailHandler(ConfigLoader.SmtpConfig?.SmtpUser, ConfigLoader.SmtpConfig.SmtpPassword, ConfigLoader.SmtpConfig.SmtpHost, ConfigLoader.SmtpConfig.Port);
+        MailHandler = new MailHandler(ConfigLoader.SmtpConfig?.SmtpUser, ConfigLoader.SmtpConfig.SmtpPassword,
+            ConfigLoader.SmtpConfig.SmtpHost, ConfigLoader.SmtpConfig.Port);
         OxygenMail = new OxygenMail(MailHandler);
-
     }
-
-
+    
     /// <summary>
     /// Endpoint to add a new OxygenMeasurement.
     /// </summary>
@@ -40,27 +39,32 @@ public class OxygenController : ControllerBase
     /// if the operation was successful. A response indicating the result of the operation and the newly created OxygenMeasurement
     /// or a badRequest
     /// </returns>
-   // [ServiceFilter(typeof(ApiKeyAuthorizationFilter))]
+    [ServiceFilter(typeof(ApiKeyAuthorizationFilter))]
     [HttpPost("PostOxygenMeasurement")]
     public async Task<IActionResult> PostOxygenMeasurement(AddOxygenMeasurementRequestDto addOxygenMeasurement)
     {
+       
         var createdOxygenMeasurement = await oxygenMeasurementService.AddOxygenMeasurementAsync(addOxygenMeasurement);
 
         if (createdOxygenMeasurement == null)
         {
             return BadRequest("Failed to create oxygen measurement");
         }
-
+        
         var mailReceivers =
             await oxygenMeasurementService.GetSystemNotificationAdvisors(createdOxygenMeasurement
                 .OxygenMeasurementSystemId);
         
-        OxygenMail.SendMailToSubscribes(mailReceivers, OxygenMail.MailOptions.Harvest);
-
+        if (createdOxygenMeasurement.OxygenValue > (decimal)4.00)
+        {
+           // OxygenMail.SendMailToSubscribes(mailReceivers, OxygenMail.MailOptions.Harvest);
+        }
+        
         // Return a 201 Created response with the newly created OxygenMeasurement.
         return CreatedAtAction(nameof(GetOxygenMeasurementById), new { id = createdOxygenMeasurement.Id },
             createdOxygenMeasurement);
     }
+    
 
     /// <summary>
     /// Endpoint to retrieve an OxygenMeasurement by its ID.
@@ -74,57 +78,8 @@ public class OxygenController : ControllerBase
     public async Task<IActionResult> GetOxygenMeasurementById(int id)
     {
         var oxygenMeasurement = await oxygenMeasurementService.GetOxygenMeasurementByIdAsync(id);
-
-        if (oxygenMeasurement == null)
-        {
-            return NotFound();
-        }
-
+        
         return Ok(oxygenMeasurement);
     }
-    /// <summary>
-    /// Endpoint to retrieve all OxygenMeasurements.
-    /// </summary>
-    /// <returns>A response containing a list of all OxygenMeasurements.</returns>
-    [HttpGet("GetAllOxygenMeasurements")]
-    public async Task<IActionResult> GetAllOxygenMeasurements()
-    {
-        var oxygenMeasurements = await oxygenMeasurementService.GetAllOxygenMeasurementsAsync();
-
-        return Ok(oxygenMeasurements);
-    }
-
-    /// <summary>
-    /// Endpoint to retrieve all OxygenMeasurements for a specific system.
-    /// </summary>
-    /// <param name="systemId">The ID of the system for which to retrieve OxygenMeasurements.</param>
-    /// <returns>
-    /// a List of OxygenMeasurements if there is any OxygenMeasurements for the specified system.
-    /// or an empty list
-    /// </returns>
-    [HttpGet("GetAllOxygenMeasurementsForSystem")]
-    public async Task<IActionResult> GetAllOxygenMeasurements(int systemId)
-    {
-        var oxygenMeasurements = await oxygenMeasurementService.GetAllSystemOxygenMeasurementsAsync(systemId);
-
-        return Ok(oxygenMeasurements);
-    }
-
-    /// <summary>
-    /// Endpoint to retrieve a specific amount of recent OxygenMeasurements for a specific system.
-    /// </summary>
-    /// <param name="systemId">The ID of the system for which to retrieve OxygenMeasurements.</param>
-    /// <param name="amount">The desired amount of recent OxygenMeasurements.</param>
-    /// <returns>
-    /// a List of OxygenMeasurements if there is any OxygenMeasurements for the specified system.
-    /// or an empty list
-    /// </returns>
-    [HttpGet("GetSpecificAmountOfOxygenMeasurements")]
-    public async Task<IActionResult> GetSpecificAmountOfOxygenMeasurements(int systemId, int amount)
-    {
-        var oxygenMeasurements =
-            await oxygenMeasurementService.GetSpecificAmountOfOxygenMeasurementsAsync(systemId, amount);
-
-        return Ok(oxygenMeasurements);
-    }
+    
 }

@@ -12,25 +12,40 @@ public class OxygenMeasurementServiceTests : BaseUnitTest
     }
 
     [Fact]
-    public async Task should_Add_New_OxygenMeasurement_if_oxygenMeasurementSystem_Exists()
+    public async Task Should_Add_New_OxygenMeasurement_If_OxygenMeasurementSystem_Exists()
     {
         // Arrange
-        // Insert test system
+        // Insert a test oxygen measurement system
         var testSystem = TestDataProvider.GetTestOxygenMeasurementSystemRequestDto();
         var testSystemInserted = await OxygenMeasurementSystemService.AddOxygenMeasurementSystemAsync(testSystem);
 
+        // Check if the test system was successfully inserted
         if (testSystemInserted != null)
         {
+            // Create a new test oxygen measurement associated with the inserted system
             var newOxygenMeasurement = TestDataProvider.GetTestOxygenMeasurementRequestDto(testSystemInserted.Id);
 
             // Act
+            // Add the new oxygen measurement
             var actual = await OxygenMeasurementService.AddOxygenMeasurementAsync(newOxygenMeasurement);
 
             // Assert
+            // Verify that the returned object is not null
             Assert.NotNull(actual);
+
+            // Verify that the returned object is of the correct type
             Assert.IsType<OxygenMeasurementResponseDto>(actual);
+
+            // Verify that the returned object has a valid ID
             Assert.True(actual != null && actual.Id > 0);
+
+            // Verify that the returned object has the correct oxygen value
             Assert.True(actual != null && newOxygenMeasurement.OxygenValue == actual.OxygenValue);
+        }
+        else
+        {
+            // assert a failure if the test system insertion fails
+            Assert.True(false, "Failed to insert the test oxygen measurement system.");
         }
     }
 
@@ -48,6 +63,4 @@ public class OxygenMeasurementServiceTests : BaseUnitTest
         // Assert
         Assert.Contains("not found", actual.Message);
     }
-    
-    
 }

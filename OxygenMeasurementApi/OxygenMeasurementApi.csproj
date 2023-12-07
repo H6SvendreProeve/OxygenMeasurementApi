@@ -23,6 +23,10 @@
     <ItemGroup>
       <ProjectReference Include="..\OxygenMeasurementMailLibrary\OxygenMeasurementMailLibrary.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Data\Extensions\" />
+    </ItemGroup>
     
   
 

@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using OxygenMeasurementApi.Data.Context;
 using OxygenMeasurementApi.Data.Dtos.RequestDtos;
 using OxygenMeasurementApi.Data.Dtos.ResponseDtos;
-using OxygenMeasurementApi.Data.Extensions;
 using OxygenMeasurementApi.Data.Mappers;
 using OxygenMeasurementApi.Exceptions;
 
@@ -71,9 +70,8 @@ public class OxygenMeasurementService : IOxygenMeasurementService
         {
             throw;
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            await Logger.Logger.LogAsync($"error during insert of request {oxygenMeasurementDto} \n exception {e}");
             throw new CustomDbException($"something went wrong when inserting your request {oxygenMeasurementDto}");
         }
     }
@@ -105,94 +103,8 @@ public class OxygenMeasurementService : IOxygenMeasurementService
 
         return dbOxygenMeasurement.ToResponse();
     }
-
-
-    /// <summary>
-    /// Retrieves all Oxygen Measurements for a specific Oxygen Measurement System.
-    /// </summary>
-    /// <param name="systemId">The ID of the Oxygen Measurement System.</param>
-    /// <returns>
-    /// A <see cref="Task{TResult}"/> representing the asynchronous operation, containing a list of
-    /// <see cref="OxygenMeasurementResponseDto"/> representing the Oxygen Measurements for the system.
-    /// </returns>
-    /// <exception cref="NotFoundException">
-    /// Thrown if the specified Oxygen Measurement System is not found.
-    /// </exception>
-    public async Task<List<OxygenMeasurementResponseDto?>> GetAllSystemOxygenMeasurementsAsync(int systemId)
-    {
-        var dbOxygenMeasurementSystem = await
-            oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms =>
-                oms.OxygenMeasurementSystemId == systemId);
-
-        if (dbOxygenMeasurementSystem == null)
-        {
-            throw new NotFoundException($"OxygenMeasurementSystem with id {systemId} is not found");
-        }
-
-        var oxygenMeasurements = await oxygenDbContext.OxygenMeasurements
-            .Where(om => om.OxygenMeasurementSystemId == systemId)
-            .OrderByDescending(om => om.OxygenMeasurementId)
-            .ToListAsync();
-
-        var oxygenMeasurementResponse = oxygenMeasurements.ToResponseList();
-
-        return oxygenMeasurementResponse;
-    }
-
-
-    /// <summary>
-    /// Retrieves all Oxygen Measurements from the system.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="Task{TResult}"/> representing the asynchronous operation, containing a list of
-    /// <see cref="OxygenMeasurementResponseDto"/> representing all Oxygen Measurements.
-    /// </returns>
-
-    public async Task<List<OxygenMeasurementResponseDto?>> GetAllOxygenMeasurementsAsync()
-    {
-        var oxygenMeasurements = await oxygenDbContext.OxygenMeasurements.ToListAsync();
-
-        oxygenMeasurements = oxygenMeasurements.ConvertMeasurementTimeToLocalTimezone();
-
-        return oxygenMeasurements.ToResponseList();
-    }
-
-
-    /// <summary>
-    /// Retrieves a specific amount of Oxygen Measurements for a given Oxygen Measurement System.
-    /// </summary>
-    /// <param name="systemId">The ID of the Oxygen Measurement System.</param>
-    /// <param name="amount">The desired number of measurements to retrieve.</param>
-    /// <returns>
-    /// A <see cref="Task{TResult}"/> representing the asynchronous operation, containing a list of
-    /// <see cref="OxygenMeasurementResponseDto"/> representing the requested Oxygen Measurements.
-    /// </returns>
-    /// <exception cref="NotFoundException">
-    /// Thrown if the specified Oxygen Measurement System is not found.
-    /// </exception>
-
-    public async Task<List<OxygenMeasurementResponseDto?>> GetSpecificAmountOfOxygenMeasurementsAsync(int systemId,
-        int amount)
-    {
-        var dbSystem =
-            await oxygenDbContext.OxygenMeasurementSystems.FirstOrDefaultAsync(oms =>
-                oms.OxygenMeasurementSystemId == systemId);
-
-        if (dbSystem == null)
-        {
-            throw new NotFoundException($"systemId with value {systemId} is not found");
-        }
-
-        var dbMeasurements = await GetAllSystemOxygenMeasurementsAsync(systemId);
-
-        var measurements = dbMeasurements.Where(om => om.OxygenMeasurementSystemId == systemId)
-            .OrderByDescending(om => om.Id)
-            .Take(amount).ToList();
-
-
-        return measurements;
-    }
-
+    
+    
     public async Task<List<string>> GetSystemNotificationAdvisors(int systemId)
     {
         var systemNotificationAdvisors =

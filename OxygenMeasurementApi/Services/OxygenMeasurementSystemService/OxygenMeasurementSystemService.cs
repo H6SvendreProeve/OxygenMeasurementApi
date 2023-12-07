@@ -41,17 +41,6 @@ public class OxygenMeasurementSystemService : IOxygenMeasurementSystemService
         
         return dbOxygenMeasurementSystem.ToResponse();
     }
-
-    /// <summary>
-    /// Gets all Oxygen Measurement Systems asynchronously.
-    /// </summary>
-    /// <returns>A list of Oxygen Measurement System response DTOs.</returns>
-    public async Task<List<OxygenMeasurementSystemsResponseDto?>> GetAllOxygenMeasurementSystemsAsync()
-    {
-        var dbOxygenMeasurementSystems = await oxygenDbContext.OxygenMeasurementSystems.ToListAsync();
-
-        return dbOxygenMeasurementSystems.ToResponseList();
-    }
     
  
     /// <summary>
