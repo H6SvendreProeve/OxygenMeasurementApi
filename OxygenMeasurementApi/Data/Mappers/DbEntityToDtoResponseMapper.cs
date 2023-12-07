@@ -48,16 +48,7 @@ public static class DbEntityToDtoResponseMapper
     {
         return systemNotificationAdvisors.Select(systemNotificationAdvisor => systemNotificationAdvisor.ToResponse()).ToList();
     }
-
-    /// <summary>
-    /// Converts a list of OxygenMeasurement entities to a list of OxygenMeasurementResponseDto.
-    /// </summary>
-    /// <param name="dbMeasurements">The list of OxygenMeasurement entities to convert.</param>
-    /// <returns>The mapped list of OxygenMeasurementResponseDto.</returns>
-    public static List<OxygenMeasurementResponseDto?> ToResponseList(this IEnumerable<OxygenMeasurement> dbMeasurements)
-    {
-        return dbMeasurements.Select(oxygenMeasurement => oxygenMeasurement.ToResponse()).ToList();
-    }
+    
 
     /// <summary>
     /// Converts an OxygenMeasurement entity to an OxygenMeasurementResponseDto.
@@ -75,31 +66,5 @@ public static class DbEntityToDtoResponseMapper
             SystemName = oxygenMeasurement.OxygenMeasurementSystem.SystemName,
             SystemLocation = oxygenMeasurement.OxygenMeasurementSystem.Location
         };
-    }
-
-    /// <summary>
-    /// Converts an OxygenMeasurementSystem entity to an simplified OxygenMeasurementSystemsResponseDto.
-    /// </summary>
-    /// <param name="oxygenMeasurementSystem">The OxygenMeasurementSystem entity to convert.</param>
-    /// <returns>The mapped simplified OxygenMeasurementSystemsResponseDto.</returns>
-    public static OxygenMeasurementSystemsResponseDto ToSimpleResponse(this OxygenMeasurementSystem oxygenMeasurementSystem)
-    {
-        return new OxygenMeasurementSystemsResponseDto
-        {
-            OxygenMeasurementSystemId = oxygenMeasurementSystem.OxygenMeasurementSystemId,
-            SystemName = oxygenMeasurementSystem.SystemName,
-            Location = oxygenMeasurementSystem.Location
-        };
-    }
-
-    /// <summary>
-    /// Converts a list of OxygenMeasurementSystem entities to a list of simplified OxygenMeasurementSystemsResponseDto.
-    /// </summary>
-    /// <param name="dbSystems">The list of OxygenMeasurementSystem entities to convert.</param>
-    /// <returns>The mapped list of simplified OxygenMeasurementSystemsResponseDto.</returns>
-    public static List<OxygenMeasurementSystemsResponseDto> ToResponseList(
-        this IEnumerable<OxygenMeasurementSystem> dbSystems)
-    {
-        return dbSystems.Select(oms => oms.ToSimpleResponse()).ToList();
     }
 }
